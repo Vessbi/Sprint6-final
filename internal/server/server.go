@@ -26,7 +26,7 @@ func ServerNew(logger *log.Logger) *Server {
 	router := http.NewServeMux()
 
 	// Обработчик для обслуживания index.html.
-	router.HandleFunc("/", handlers.FileHandler)
+	router.HandleFunc("GET /", handlers.FileHandler)
 	// Обработчик для загруженных файлов
 	router.HandleFunc("POST /upload", handlers.ParcerHandler)
 

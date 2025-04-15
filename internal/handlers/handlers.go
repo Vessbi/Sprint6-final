@@ -40,7 +40,7 @@ func ParcerHandler(res http.ResponseWriter, req *http.Request) {
 	scanner := bufio.NewScanner(file)
 	var dataFile string
 	for scanner.Scan() {
-		dataFile += scanner.Text() + "\n"
+		dataFile += scanner.Text()
 	}
 	if err := scanner.Err(); err != nil {
 		http.Error(res, "error reading file", http.StatusInternalServerError)
